@@ -24,3 +24,31 @@ class Solution {
         return 1;
     }
 }
+
+//MaxProfit
+
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can write to stdout for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 8
+        int minPrice=Integer.MAX_VALUE;
+        int maxDifference=0;
+        int diff=0;;
+        for(int i=0;i< A.length;i++){
+            if(minPrice > A[i]){
+                minPrice=A[i];
+            }else{
+                diff=A[i]-minPrice;
+                if(diff>maxDifference){
+                    maxDifference=diff;
+                }
+            }
+        }
+        return maxDifference;
+    }
+}
